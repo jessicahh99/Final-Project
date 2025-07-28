@@ -26,4 +26,5 @@ format:
     documentclass: scrreprt
 
 editor: visual
+output-dir: .
 site-url: "https://jessicahh99.github.io/Final-Project/"
