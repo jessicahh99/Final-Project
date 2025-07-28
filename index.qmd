@@ -7,3 +7,5 @@ To learn more about Quarto books visit <https://quarto.org/docs/books>.
 ```{r}
 1 + 1
 ```
+
+git add . git commit -m "Initial commit of Quarto book" git branch -M main git push -u origin main
