@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "Final Project"
@@ -22,9 +23,5 @@ format:
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
-
+    code-fold: true
 editor: visual
-output-dir: .
-site-url: "https://jessicahh99.github.io/Final-Project/"
