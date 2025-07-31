@@ -55,7 +55,23 @@ shinyApp(ui = ui, server = server)
 
 library(tidyverse)
 library(hockeyR)
+pbp_2021 <- load_pbp("2020-2021")
 pbp_2122 <- load_pbp("2021-2022")
 pbp_2223 <- load_pbp("2022-2023")
 pbp_2324 <- load_pbp("2023-2024")
-pbp_2021 <- load_pbp("2020-2021")
+
+pbp_2021_1 <- pbp_2021 |>
+  select(event_type) |>
+  filter(event_type == "SHOT" | event_type == "BLOCKED_SHOT" |
+           event_type == "MISSED_SHOT" | event_type == "GOAL") |>
+  mutate(
+    is_goal = ifelse(event_type == "GOAL",1,0),
+    is_shot = ifelse(event_type == "SHOT",1,0),
+    is_missed = ifelse(event_type == "MISSED_SHOT",1,0),
+    is_blocked = ifelse(event_type == "BLOCKED_SHOT",1,0)
+  )
+
+corsi <- glm(is_goal ~ is_shot + is_missed + is_blocked, family = binomial, data = pbp_2021_1)
+
+
+summary(corsi)
