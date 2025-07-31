@@ -24,4 +24,5 @@ format:
       - cosmo
       - brand
     code-fold: true
+    clean-url: false
 editor: visual
