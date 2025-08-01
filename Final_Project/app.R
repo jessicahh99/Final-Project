@@ -61,17 +61,16 @@ pbp_2223 <- load_pbp("2022-2023")
 pbp_2324 <- load_pbp("2023-2024")
 
 pbp_2021_1 <- pbp_2021 |>
-  select(event_type) |>
+  select(event_type, secondary_type, strength, x, y, shot_distance, shot_angle) |>
   filter(event_type == "SHOT" | event_type == "BLOCKED_SHOT" |
            event_type == "MISSED_SHOT" | event_type == "GOAL") |>
-  mutate(
-    is_goal = ifelse(event_type == "GOAL",1,0),
-    is_shot = ifelse(event_type == "SHOT",1,0),
-    is_missed = ifelse(event_type == "MISSED_SHOT",1,0),
-    is_blocked = ifelse(event_type == "BLOCKED_SHOT",1,0)
-  )
+   mutate(
+     is_goal = ifelse(event_type == "GOAL",1,0))
 
-corsi <- glm(is_goal ~ is_shot + is_missed + is_blocked, family = binomial, data = pbp_2021_1)
+a <- glm(is_goal ~ as.factor(event_type) + as.factor(strength) + shot_distance + shot_angle, family = binomial, data = pbp_2021_1)
 
 
-summary(corsi)
+summary(a)
+
+
+### for each game, we can get expected goals per player?
