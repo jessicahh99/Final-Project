@@ -1,3 +1,9 @@
 ---
 title: "Visualize"
 ---
+
+\
+How should the information be presented visually?\
+How has the information been visualized in analogous or adjacent use cases?
+
+This data could be presented through a scatter plot fo where players are in expected vs. actual goals, with the ability to highlight top and bottom players?
