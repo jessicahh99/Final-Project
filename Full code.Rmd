@@ -1,0 +1,64 @@
+---
+title: "Full Code"
+output: html_document
+date: "2025-08-01"
+---
+
+```{r}
+library(tidyverse)
+library(hockeyR)
+library(vetiver)
+
+app <- VetiverAPI(v, check_prototype = TRUE)
+
+pbp_2021 <- load_pbp("2020-2021")
+pbp_2122 <- load_pbp("2021-2022")
+pbp_2223 <- load_pbp("2022-2023")
+pbp_2324 <- load_pbp("2023-2024")
+
+pbp_2021_1 <- pbp_2021 |>
+  select(event_type, secondary_type, strength_state, x, y, shot_distance, shot_angle) |>
+  filter(event_type == "SHOT" | event_type == "BLOCKED_SHOT" |
+           event_type == "MISSED_SHOT" | event_type == "GOAL") |>
+  filter(strength_state == "5v5") |>
+   mutate(
+     is_goal = ifelse(event_type == "GOAL",1,0))
+
+a <- glm(is_goal ~ as.factor(secondary_type) + shot_distance + shot_angle, family = binomial, data = pbp_2021_1)
+
+
+summary(a)
+
+
+```
+
+```{r}
+library(vetiver)
+v <- vetiver_model(rf_fit, "sacramento_rf") # this is fitting it with vetiver
+
+
+
+
+```
+
+log on with the .pem key:
+
+ssh -i .pem name \
+
+# chapter 8 lab
+
+• Multiple levels of logging for user interactions and external API calls within the shiny
+
+-   ch 4, understanding log levels
+
+# all of this goes in your docker file?
+
+library(vetiver) library(plumber) \# vetiver_model \<- vetivermodel(a, "name") when you get a to work vetiver_api(vetiver_model) \|\> pr_run(port = 8000)
+
+vetiver_prepare_docker( board, \# here it should be a remote file .... ) \# deploy with docker in MLOps with vetiver book
+
+### for each game, we can get expected goals per player?
+
+upload docker file into EC2 instance.
+
+docker file is created locally, but need some credentials to add it into your EC2 instance (SSH/SEP file copy)

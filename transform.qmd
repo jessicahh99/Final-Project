@@ -1,3 +1,11 @@
 ---
 title: "Transform"
 ---
+
+Questions to answer:
+
+-   What metrics should be derived from the collected data?
+
+-   What subject matter (domain) knowledge is necessary to calculate auxiliary values?
+
+From our data, we're looking to create an expected goals model, and based on that model, create and adjusted plus minus rating for players.

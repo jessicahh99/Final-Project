@@ -1,3 +1,16 @@
 ---
 title: "Import"
 ---
+
+## Data
+
+In order to address the question, we needed all the shots, missed shots, blocked shots, etc for the 2020-2021 until the 2023-2024 season. The source of the data for this project was through HockeyR. They collect the play-by-play data for each season including more than 100 variables for each play. To pull the data, we used the library() and load_pbp() functions, the latter of which is a function within the HockeyR package.
+
+```{r}
+#library(hockeyR)
+#pbp_2021 <- load_pbp("2020-2021")
+```
+
+Note that HockeyR doesn't have the 2024-2025 season data, and that the 2020-2021 season only had 56 games instead of the regular 82 due to COVID-19. As a note from the author of HockeyR, during the 2023-2024 season, the NHL implemented a new API, and deactivated the old one. This disrupted some of the formulas within HockeyR, although the 2023-2024 data appears to be fine. However, the data is supposed to be updated daily, and there's no data for the 2024-2025 season.
+
+Through the HockeyR package, the data is scraped from Hockey Reference (hockeyreference.com), and by using load_pbp(x), that's a bulk download for the xth season. Once this function is run, that season's play-by-play is now in your environment.

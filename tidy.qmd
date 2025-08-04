@@ -1,3 +1,21 @@
 ---
 title: "Tidy"
 ---
+
+## Tidy
+
+Questions to answer:
+
+-   How is the information that I am looking to acquire currently formatted?
+
+-   What pieces of information do I want to retain to convert into a tidy format?
+
+Once the data is imported, there are over 100 variables for each play in each game. Each row represents one play, for example, period start, faceoff, and hit are the first three plays in the 2023-2024 NHL season. Since this data is already tidy, there's not many changes to make.
+
+If we wanted to look at shot data alone, we can define a list of shot-related plays. For example, we can define Fenwick to be all goals, shots, missed shots, and blocked shots (maybe a citation?).
+
+```{r}
+fenwick <- c("SHOT", "MISSED_SHOT", "BLOCKED_SHOT", "GOAL")
+```
+
+Next, we would filter the event type to only be those within fenwick. Now we have all the plays that are shot types. If I wanted individual player information, I could filter out for that specific player based on event_player_1_name.

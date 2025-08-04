@@ -1,0 +1,12 @@
+name: final_book
+title:
+username: jessielaistat468
+account: jessielaistat468
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 15150921
+bundleId: 10712953
+url: https://jessielaistat468.shinyapps.io/final_book/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

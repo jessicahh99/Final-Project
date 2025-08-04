@@ -1,3 +1,7 @@
 ---
 title: "Communicate"
 ---
+
+Who are my stakeholders receiving the insights generated from this analysis?\
+What is the most sustainable medium for these insights to be shared?\
+How often will these insights be shared?\

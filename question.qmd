@@ -2,4 +2,10 @@
 title: "Question"
 ---
 
-The question is whether or not we can make a
+The main purpose of this project is to find the optimal expected goals model. In addition to that, we can used expected goals to create an adjusted plus/minus for players.
+
+-   why is this question interesting
+
+-   who could this question help
+
+-   

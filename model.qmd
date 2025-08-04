@@ -1,3 +1,15 @@
 ---
 title: "Model"
 ---
+
+Will this information be used to predict future outcomes, make inferences on past events, or describe the phenomena taking place?
+
+future outcomes from past events
+
+talk about brian mcdonalds model
+
+trying different models
+
+hockeyR models
+
+evolving hockey/money puck models
