@@ -18,5 +18,75 @@
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Question</span>"
     ]
+  },
+  {
+    "objectID": "visualize.html",
+    "href": "visualize.html",
+    "title": "5  Visualize",
+    "section": "",
+    "text": "How should the information be presented visually?\nHow has the information been visualized in analogous or adjacent use cases?\nThis data could be presented through a scatter plot fo where players are in expected vs. actual goals, with the ability to highlight top and bottom players?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Visualize</span>"
+    ]
+  },
+  {
+    "objectID": "model.html",
+    "href": "model.html",
+    "title": "6  Model",
+    "section": "",
+    "text": "Will this information be used to predict future outcomes, make inferences on past events, or describe the phenomena taking place?\nfuture outcomes from past events\ntalk about brian mcdonalds model\ntrying different models\nhockeyR models\nevolving hockey/money puck models",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Model</span>"
+    ]
+  },
+  {
+    "objectID": "import.html",
+    "href": "import.html",
+    "title": "2  Import",
+    "section": "",
+    "text": "2.1 Data\nIn order to address the question, we needed all the shots, missed shots, blocked shots, etc for the 2020-2021 until the 2023-2024 season. The source of the data for this project was through HockeyR. They collect the play-by-play data for each season including more than 100 variables for each play. To pull the data, we used the library() and load_pbp() functions, the latter of which is a function within the HockeyR package.\nCode\n#library(hockeyR)\n#pbp_2021 &lt;- load_pbp(\"2020-2021\")\nNote that HockeyR doesn’t have the 2024-2025 season data, and that the 2020-2021 season only had 56 games instead of the regular 82 due to COVID-19. As a note from the author of HockeyR, during the 2023-2024 season, the NHL implemented a new API, and deactivated the old one. This disrupted some of the formulas within HockeyR, although the 2023-2024 data appears to be fine. However, the data is supposed to be updated daily, and there’s no data for the 2024-2025 season.\nThrough the HockeyR package, the data is scraped from Hockey Reference (hockeyreference.com), and by using load_pbp(x), that’s a bulk download for the xth season. Once this function is run, that season’s play-by-play is now in your environment.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Import</span>"
+    ]
+  },
+  {
+    "objectID": "tidy.html",
+    "href": "tidy.html",
+    "title": "3  Tidy",
+    "section": "",
+    "text": "3.1 Tidy\nQuestions to answer:\nOnce the data is imported, there are over 100 variables for each play in each game. Each row represents one play, for example, period start, faceoff, and hit are the first three plays in the 2023-2024 NHL season. Since this data is already tidy, there’s not many changes to make.\nIf we wanted to look at shot data alone, we can define a list of shot-related plays. For example, we can define Fenwick to be all goals, shots, missed shots, and blocked shots (maybe a citation?).\nCode\nfenwick &lt;- c(\"SHOT\", \"MISSED_SHOT\", \"BLOCKED_SHOT\", \"GOAL\")\nNext, we would filter the event type to only be those within fenwick. Now we have all the plays that are shot types. If I wanted individual player information, I could filter out for that specific player based on event_player_1_name.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidy</span>"
+    ]
+  },
+  {
+    "objectID": "tidy.html#tidy",
+    "href": "tidy.html#tidy",
+    "title": "3  Tidy",
+    "section": "",
+    "text": "How is the information that I am looking to acquire currently formatted?\nWhat pieces of information do I want to retain to convert into a tidy format?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidy</span>"
+    ]
+  },
+  {
+    "objectID": "transform.html",
+    "href": "transform.html",
+    "title": "4  Transform",
+    "section": "",
+    "text": "Questions to answer:\n\nWhat metrics should be derived from the collected data?\nWhat subject matter (domain) knowledge is necessary to calculate auxiliary values?\n\nFrom our data, we’re looking to create an expected goals model, and based on that model, create and adjusted plus minus rating for players.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Transform</span>"
+    ]
+  },
+  {
+    "objectID": "communicate.html",
+    "href": "communicate.html",
+    "title": "7  Communicate",
+    "section": "",
+    "text": "Who are my stakeholders receiving the insights generated from this analysis?\nWhat is the most sustainable medium for these insights to be shared?\nHow often will these insights be shared?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Communicate</span>"
+    ]
   }
 ]
